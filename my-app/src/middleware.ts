@@ -3,8 +3,8 @@ import { NextResponse } from 'next/server';
 
 
 const isPublicPath = createRouteMatcher([
-    "/signup",
-    "/signin",
+    "/sign-up",
+    "/sign-in",
     "/",
     "/home"
 ]
@@ -27,13 +27,13 @@ export default clerkMiddleware(async (auth,req)=>{
     
     if(!userId){
         if(!isPublicApi(req)    && !isPublicPath(req)){
-            return NextResponse.redirect(new URL("/signup" , req.url))
+            return NextResponse.redirect(new URL("/sign-up" , req.url))
             
         }
         
         if(isApiPage && !isPublicApi(req)){
             
-            return NextResponse.redirect(new URL("/signup" , req.url))
+            return NextResponse.redirect(new URL("/sign-up" , req.url))
         }
 
     }
