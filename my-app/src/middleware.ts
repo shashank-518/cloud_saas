@@ -6,7 +6,7 @@ const isPublicPath = createRouteMatcher([
     "/sign-up",
     "/sign-in",
     "/",
-    "/home"
+    "/Home"
 ]
 )
 
@@ -18,11 +18,11 @@ export default clerkMiddleware(async (auth,req)=>{
     const {userId} = await auth()
     const currentURL = new URL(req.url)
 
-    const isHomePage = currentURL.pathname === "/home"
+    const isHomePage = currentURL.pathname === "/Home"
     const isApiPage = currentURL.pathname.startsWith("/api")
 
     if(userId && isPublicPath(req) && isHomePage ){
-        return NextResponse.redirect(new URL("/home" , req.url))
+        return NextResponse.redirect(new URL("/Home" , req.url))
     }
     
     if(!userId){
