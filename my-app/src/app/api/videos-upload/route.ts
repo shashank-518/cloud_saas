@@ -7,10 +7,17 @@ import { PrismaClient } from "../../../generated/prisma/client";
 const prisma = new PrismaClient();
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
+
+export const config = {
+  api: {
+    bodyParser: false, 
+  },
+};
 
 interface cloudinaryUploadResponse {
   public_id: string;
@@ -27,6 +34,8 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    console.log("hello");
+    
     const formData = await req.formData();
     const file = formData.get("file") as File | null;
     const title = formData.get("title") as string;
@@ -44,8 +53,8 @@ export async function POST(req: NextRequest) {
       (resolve, reject) => {
         const upload_stream = cloudinary.uploader.upload_stream(
           { 
-            folder: "videos-upload" ,
             resource_type : "video",
+            folder: "videos-upload" ,
             transformation:[
                 {
                     quality : "auto",
