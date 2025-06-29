@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server';
 const isPublicPath = createRouteMatcher([
     "/sign-up",
     "/sign-in",
-    "/Home"
+    "/Main"
 ]
 )
 
@@ -17,11 +17,11 @@ export default clerkMiddleware(async (auth,req)=>{
     const {userId} = await auth()
     const currentURL = new URL(req.url)
 
-    const isHomePage = currentURL.pathname === "/Home"
+    const isHomePage = currentURL.pathname === "/Main"
     const isApiPage = currentURL.pathname.startsWith("/api")
 
     if(userId && isPublicPath(req) && isHomePage ){
-        return NextResponse.redirect(new URL("/Home" , req.url))
+        return NextResponse.redirect(new URL("/Main" , req.url))
     }
     
     if(!userId){
