@@ -16,6 +16,7 @@ const eslintConfig = [
     files: ["src/generated/prisma/*.js"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
     },
   },
 
