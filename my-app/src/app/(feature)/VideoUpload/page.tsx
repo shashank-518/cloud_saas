@@ -33,16 +33,17 @@ const VideoUpload = () => {
     formData.append("originalSize" , file.size.toString())
 
     try {
-
+      
       await axios.post("/api/videos-upload" ,formData)
-      router.push("/")
+
+      router.push("/mainpage")
     } catch (error) {
       console.log(error);
       
     }
     finally{
       setLoading(false)
-      router.push("/")
+      router.push("/mainpage")
     }
 
 }
