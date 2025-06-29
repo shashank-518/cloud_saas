@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 const sidebarItems = [
-  { href: "/Main", icon: LayoutDashboardIcon, label: "Home Page" },
+  { href: "/mainpage", icon: LayoutDashboardIcon, label: "Home Page" },
   { href: "/Social-share", icon: Share2Icon, label: "Social Share" },
   { href: "/VideoUpload", icon: UploadIcon, label: "Video Upload" },
 ];

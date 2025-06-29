@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // ✅ allow deploy even if ESLint has errors
   },
+  
 };
+
 
 export default nextConfig;
