@@ -5,7 +5,6 @@ import { NextResponse } from 'next/server';
 const isPublicPath = createRouteMatcher([
     "/sign-up",
     "/sign-in",
-    "/",
     "/Home"
 ]
 )
