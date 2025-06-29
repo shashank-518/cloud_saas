@@ -15,7 +15,6 @@ export async function GET(){
     return NextResponse.json(data)
         
     } catch (error:any) {
-        console.log("hello");
         return NextResponse.json(error)
         
     } finally{
