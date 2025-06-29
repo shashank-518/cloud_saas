@@ -67,6 +67,16 @@ export default function Home (){
        )
     }
 
+    if(error){
+      return (
+       <div className="flex items-center justify-center h-40 w-full">
+          <div className="text-center text-lg text-red-500">
+             {error}
+          </div>
+       </div>
+       )
+    }
+
   return (
    <div className="container mx-auto p-4">
           <h1 className="text-2xl font-bold mb-4">Videos</h1>

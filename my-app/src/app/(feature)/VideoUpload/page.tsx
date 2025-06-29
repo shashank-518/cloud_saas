@@ -34,7 +34,7 @@ const VideoUpload = () => {
 
     try {
 
-      const response = await axios.post("/api/videos-upload" ,formData)
+      await axios.post("/api/videos-upload" ,formData)
       router.push("/")
     } catch (error) {
       console.log(error);
