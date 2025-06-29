@@ -56,10 +56,6 @@ export default function Home (){
    if(loading){
        return (
        <>
-       {/* <div>
-       <span className="loading loading-spinner text-warning"></span>
-
-       </div> */}
 
        <div className="flex items-center justify-center h-40 w-full ">
           <span className="loading loading-spinner text-yellow-500 scale-150"></span>
